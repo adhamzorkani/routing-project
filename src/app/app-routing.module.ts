@@ -10,10 +10,14 @@ import { SettingsContactComponent } from './settings-contact/settings-contact.co
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'settings', component: SettingsComponent, children: [
-    {path: 'profile', component: SettingsProfileComponent},
-    {path: 'contact', component: SettingsContactComponent }
-  ]},
+  {
+    path: 'settings', component: SettingsComponent, children: [
+      { path: '', redirectTo: 'profile', pathMatch: 'full' },
+      { path: 'profile', component: SettingsProfileComponent },
+      { path: 'contact', component: SettingsContactComponent },
+      { path: '**', component: PageNotFoundComponent }
+    ]
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

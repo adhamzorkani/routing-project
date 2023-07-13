@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class SettingsComponent {
 
+  routes = [
+    { linkName: 'Profile', url: 'profile' },
+    { linkName: 'Contact Info', url: 'contact' }
+  ]
 }
